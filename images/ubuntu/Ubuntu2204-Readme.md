@@ -1,7 +1,11 @@
 # Ubuntu 22.04
 - OS Version: 22.04.4 LTS
 - Kernel Version: 6.5.0-1017-azure
+<<<<<<< HEAD
 - Image Version: 20240407.1.0
+=======
+- Image Version: dev
+>>>>>>> 54920b5b (pool)
 - Systemd version: 249.11-0ubuntu3.12
 
 ## Installed Software
@@ -18,7 +22,11 @@
 - Kotlin 1.9.23-release-779
 - Mono 6.12.0.200
 - MSBuild 16.10.1.31701 (Mono 6.12.0.200)
+<<<<<<< HEAD
 - Node.js 18.20.1
+=======
+- Node.js 18.20.0
+>>>>>>> 54920b5b (pool)
 - Perl 5.34.0
 - Python 3.10.12
 - Ruby 3.0.2p107
@@ -27,7 +35,11 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.14.3
+<<<<<<< HEAD
 - Homebrew 4.2.16
+=======
+- Homebrew 4.2.15
+>>>>>>> 54920b5b (pool)
 - Miniconda 24.1.2
 - Npm 10.5.0
 - NuGet 6.6.1.2
@@ -35,7 +47,11 @@
 - Pip3 22.0.2
 - Pipx 1.5.0
 - RubyGems 3.3.5
+<<<<<<< HEAD
 - Vcpkg (build from commit 5fa0f075e)
+=======
+- Vcpkg (build from commit 740c7e31b)
+>>>>>>> 54920b5b (pool)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -67,7 +83,6 @@ to accomplish this.
 - CMake 3.29.1
 - CodeQL Action Bundle 2.17.0
 - Docker Amazon ECR Credential Helper 0.7.1
-- Docker Compose v1 1.29.2
 - Docker Compose v2 2.23.3
 - Docker-Buildx 0.13.1
 - Docker Client 24.0.9
@@ -104,18 +119,32 @@ to accomplish this.
 - zstd 1.5.6
 
 ### CLI Tools
+<<<<<<< HEAD
 - Alibaba Cloud CLI 3.0.201
 - AWS CLI 2.15.36
+=======
+- Alibaba Cloud CLI 3.0.200
+- AWS CLI 2.15.33
+>>>>>>> 54920b5b (pool)
 - AWS CLI Session Manager Plugin 1.2.553.0
 - AWS SAM CLI 1.114.0
 - Azure CLI 2.59.0
 - Azure CLI (azure-devops) 1.0.0
+<<<<<<< HEAD
 - GitHub CLI 2.47.0
 - Google Cloud CLI 471.0.0
 - Netlify CLI 17.21.2
 - OpenShift CLI 4.15.6
 - ORAS CLI 1.1.0
 - Vercel CLI 33.7.0
+=======
+- GitHub CLI 2.46.0
+- Google Cloud CLI 470.0.0
+- Netlify CLI 17.21.1
+- OpenShift CLI 4.15.5
+- ORAS CLI 1.1.0
+- Vercel CLI 33.6.2
+>>>>>>> 54920b5b (pool)
 
 ### Java
 | Version             | Environment Variable |
@@ -154,6 +183,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Rustfmt 1.7.0
 
 ### Browsers and Drivers
+<<<<<<< HEAD
 - Google Chrome 123.0.6312.105
 - ChromeDriver 123.0.6312.105
 - Chromium 123.0.6312.0
@@ -161,6 +191,15 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Microsoft Edge WebDriver 123.0.2420.81
 - Selenium server 4.19.1
 - Mozilla Firefox 124.0.2
+=======
+- Google Chrome 123.0.6312.86
+- ChromeDriver 123.0.6312.86
+- Chromium 123.0.6312.0
+- Microsoft Edge 123.0.2420.65
+- Microsoft Edge WebDriver 123.0.2420.65
+- Selenium server 4.19.0
+- Mozilla Firefox 124.0.1
+>>>>>>> 54920b5b (pool)
 - Geckodriver 0.34.0
 
 #### Environment variables
@@ -277,10 +316,17 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | moby/buildkit:latest | sha256:00d2c6b8f39ae515e0eadd74f39e71a5efdc94321c9b919692a2aa32deef2bb1  | 2024-03-18 |
 | node:16              | sha256:f77a1aef2da8d83e45ec990f45df50f1a286c5fe8bbfb8c6e4246c6389705c0b  | 2023-09-07 |
 | node:16-alpine       | sha256:a1f9d027912b58a7c75be7716c97cfbc6d3099f3a97ed84aa490be9dee20e787  | 2023-08-10 |
+<<<<<<< HEAD
 | node:18              | sha256:be6b6dc2a62591408c3f0475de2e3ae34e22879fe0f5b4c3733ecfadffd62e3b  | 2024-04-04 |
 | node:18-alpine       | sha256:6d9d5269cbe4088803e9ef81da62ac481c063b60cadbe8e628bfcbb12296d901  | 2024-04-04 |
 | node:20              | sha256:8a03de2385cb16c4d76aac30bf86ab05f55f1754a5402dc9039916e8043f019a  | 2024-04-04 |
 | node:20-alpine       | sha256:7e227295e96f5b00aa79555ae166f50610940d888fc2e321cf36304cbd17d7d6  | 2024-04-04 |
+=======
+| node:18              | sha256:8438dbe00747d24cdb53c616e02bf804420df9052151713c59484a1ddaf87b24  | 2024-03-27 |
+| node:18-alpine       | sha256:c698ffe060d198dcc6647be78ea1683363f12d5d507dc5ec9855f1c55966ffdd  | 2024-03-27 |
+| node:20              | sha256:bf0ef0687ffbd6c7742e1919177826c8bf1756a68b51f003dcfe3a13c31c65fe  | 2024-03-27 |
+| node:20-alpine       | sha256:ef3f47741e161900ddd07addcaca7e76534a9205e4cd73b2ed091ba339004a75  | 2024-03-27 |
+>>>>>>> 54920b5b (pool)
 | ubuntu:20.04         | sha256:80ef4a44043dec4490506e6cc4289eeda2d106a70148b74b5ae91ee670e9c35d  | 2024-02-16 |
 | ubuntu:22.04         | sha256:77906da86b60585ce12215807090eb327e7386c8fafb5402369e421f44eff17e  | 2024-02-27 |
 
