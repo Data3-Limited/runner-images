@@ -7,10 +7,7 @@ param(
     [String] [Parameter (Mandatory=$true)] $ImageResourceGroupName,
     [String] [Parameter (Mandatory=$true)] $TempResourceGroupName,
     [String] [Parameter (Mandatory=$true)] $SubscriptionId,
-    [String] [Parameter (Mandatory=$true)] $TenantId,
-    [String] [Parameter (Mandatory=$false)] $VirtualNetworkName,
-    [String] [Parameter (Mandatory=$false)] $VirtualNetworkRG,
-    [String] [Parameter (Mandatory=$false)] $VirtualNetworkSubnet
+    [String] [Parameter (Mandatory=$true)] $TenantId
 )
 
 if (-not (Test-Path $TemplatePath))
@@ -51,9 +48,6 @@ packer build    -var "client_id=$ClientId" `
                 -var "subscription_id=$SubscriptionId" `
                 -var "temp_resource_group_name=$TempResourceGroupName" `
                 -var "tenant_id=$TenantId" `
-<#              -var "virtual_network_name=$VirtualNetworkName" `
-                -var "virtual_network_resource_group_name=$VirtualNetworkRG" `
-                -var "virtual_network_subnet_name=$VirtualNetworkSubnet" ` #>
                 -color=false `
                 $TemplatePath `
         | Where-Object {
