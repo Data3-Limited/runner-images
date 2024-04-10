@@ -1,0 +1,43 @@
+parameters:
+- name: job_id
+  type: string
+  default: 'deploy_agent'
+
+- name: image_type
+  type: string
+
+- name: agent_pool
+  type: object
+  default:
+    name: 'Default'
+
+jobs:
+- job: deploy_agent
+  displayName: Image Generation (${{ parameters.image_type }})
+  timeoutInMinutes: 600
+  cancelTimeoutInMinutes: 30
+  pool: ${{ parameters.agent_pool }}
+  variables:
+  - group: ${{ parameters.variable_group_name }}
+
+  steps:
+  - checkout: self
+    clean: true
+    fetchDepth: 0
+    fetchTags: false
+
+  - task: AzureCLI@2
+    displayName: 'Deployment | bicep'
+    inputs:
+      azureSubscription: $(SERVICE_CONNECTION)
+      scriptType: 'pscore'
+      scriptLocation: 'inlineScript'
+      inlineScript: |
+        az deployment group create `
+        --resource-group $(AZURE_RESOURCE_GROUP)
+        --name deploy-agents-$(LOCATION) `
+        --template-file 'source/azuredeploy.bicep' `
+        --location '$(LOCATION)' `
+        --parameters adminUsername=${{ variables.ADMIN_USERNAME }} `
+        --parameters generateNewKey=true `
+        --parameters imageName=${{ variables.ManagedImageName }}

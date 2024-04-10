@@ -1,0 +1,6 @@
+trigger: none
+
+jobs:
+- template: agent-deployment.yml
+  parameters:
+    image_type: ubuntu2204
