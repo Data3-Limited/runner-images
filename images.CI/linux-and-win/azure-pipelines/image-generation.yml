@@ -191,6 +191,8 @@ jobs:
                    -ImageType "${{ parameters.image_type }}" `
                    -ManagedImageName "$(ManagedImageName)" `
                    -AccessToken $(RELEASE_TARGET_TOKEN)
+      env:
+        RELEASE_TARGET_TOKEN: $(System.AccessToken)
 
   - task: PowerShell@2
     displayName: 'Clean up resources'
