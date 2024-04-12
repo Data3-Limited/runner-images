@@ -16,7 +16,7 @@ parameters:
 
 jobs:
 - job: ${{ parameters.job_id }}
-  displayName: Image Generation (${{ parameters.image_type }})
+  displayName: Deploy Agents (${{ parameters.image_type }})
   timeoutInMinutes: 600
   cancelTimeoutInMinutes: 30
   pool: ${{ parameters.agent_pool }}
@@ -38,7 +38,7 @@ jobs:
       scriptLocation: 'inlineScript'
       inlineScript: |
         az deployment group create `
-        --resource-group ${{ variables.AZURE_RESOURCE_GROUP }}
+        --resource-group ${{ variables.AZURE_RESOURCE_GROUP }} `
         --name deploy-agents-${{ variables.LOCATION }} `
         --template-file 'source/azuredeploy.bicep' `
         --location '${{ variables.LOCATION }}' `
