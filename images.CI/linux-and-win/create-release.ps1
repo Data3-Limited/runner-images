@@ -9,22 +9,16 @@ param(
 )
 
 $Body = @{
-    definitionId = $DefinitionId
-    variables = @{
-      ImageBuildId = @{
-        value = $BuildId
-      }
-      ImageType = @{
-        value = $ImageType
-      }
-      ManagedImageName = @{
+    pipelineId = $DefinitionId
+    templateParameters = @{
+      managed_image_name = @{
         value = $ManagedImageName
       }
     }
     isDraft = "false"
 } | ConvertTo-Json -Depth 3
 
-$URL = "https://vsrm.dev.azure.com/$Organization/$Project/_apis/release/releases?api-version=5.1"
+$URL = "https://dev.azure.com/$Organization/$Project/_apis/pipelines/$DefinitionId/runs?api-version=7.1-preview.1"
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("'':${AccessToken}"))
 $headers = @{
     Authorization = "Basic ${base64AuthInfo}"

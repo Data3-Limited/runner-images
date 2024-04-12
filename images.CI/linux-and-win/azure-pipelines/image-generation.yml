@@ -3,6 +3,30 @@
 # - https://github.community/t5/GitHub-Actions/Make-secrets-available-to-builds-of-forks/m-p/30678#M508
 # - https://github.community/t5/GitHub-Actions/GitHub-Actions-Manual-Trigger-Approvals/td-p/31504
 # - https://github.community/t5/GitHub-Actions/Protecting-github-workflows/td-p/30290
+# Variables
+# Azure DevOps Variable Group: Image Generation Variables
+# - CLIENT_ID
+# - CLIENT_SECRET
+# - RELEASE_TARGET_TOKEN
+# Azure DevOps Template: variables-common.yml
+# - ADMIN_USERNAME
+# - AZURE_RESOURCE_GROUP
+# - AZURE_SUBSCRIPTION
+# - AZURE_TENANT
+# - BUILD_AGENT_SUBNET_NAME
+# - BUILD_AGENT_VNET_NAME
+# - BUILD_AGENT_VNET_RESOURCE_GROUP
+# - RELEASE_TARGET_DEFINITION_ID
+# - RELEASE_TARGET_ORGANIZATION
+# - RELEASE_TARGET_PROJECT
+# Generated:
+# - ImageType
+# - ManagedImageName
+# - TemplateDirectoryName
+# - TemplateDirectoryPath
+# - TemplateFileName
+# - TemplatePath
+# - TempResourceGroupName
 
 parameters:
   - name: job_id
@@ -25,7 +49,11 @@ parameters:
 
   - name: variable_group_name
     type: string
-    default: 'Image Generation Variables'
+    default: 'Image Generation Secrets'
+
+  - name: variable_template_name
+    type: string
+    default: 'variables-common.yml'
 
   - name: create_release
     type: boolean
@@ -43,6 +71,7 @@ jobs:
   pool: ${{ parameters.agent_pool }}
   variables:
   - group: ${{ parameters.variable_group_name }}
+  - template: ${{ parameters.variable_template_name }}
 
   steps:
   - checkout: ${{ parameters.repository_ref }}

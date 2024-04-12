@@ -11,8 +11,15 @@ parameters:
   default:
     name: 'Default'
 
+- name: managed_image_name
+  type: string
+
+variables:
+- group: 'Image Generation Secrets'
+- template: variables-common.yml
+
 jobs:
-- job: deploy_agent
+- job: ${{ parameters.job_id }}
   displayName: Image Generation (${{ parameters.image_type }})
   timeoutInMinutes: 600
   cancelTimeoutInMinutes: 30

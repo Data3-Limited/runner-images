@@ -1,6 +1,0 @@
-variables:
-- name: PIPELINE_DEFINITION_ID
-  value: "468"
-
-- name: ADMIN_USERNAME
-  value: "ubuntuadminuser"
