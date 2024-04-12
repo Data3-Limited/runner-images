@@ -33,15 +33,15 @@ jobs:
   - task: AzureCLI@2
     displayName: 'Deployment | bicep'
     inputs:
-      azureSubscription: $(SERVICE_CONNECTION)
+      azureSubscription: ${{ variables.SERVICE_CONNECTION }}
       scriptType: 'pscore'
       scriptLocation: 'inlineScript'
       inlineScript: |
         az deployment group create `
-        --resource-group $(AZURE_RESOURCE_GROUP)
-        --name deploy-agents-$(LOCATION) `
+        --resource-group ${{ variables.AZURE_RESOURCE_GROUP }}
+        --name deploy-agents-${{ variables.LOCATION }} `
         --template-file 'source/azuredeploy.bicep' `
-        --location '$(LOCATION)' `
+        --location '${{ variables.LOCATION }}' `
         --parameters adminUsername=${{ variables.ADMIN_USERNAME }} `
         --parameters generateNewKey=true `
-        --parameters imageName=${{ variables.ManagedImageName }}
+        --parameters imageName=${{ parameters.managed_image_name }}
