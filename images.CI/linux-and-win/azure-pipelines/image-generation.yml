@@ -7,7 +7,6 @@
 # Azure DevOps Variable Group: Image Generation Variables
 # - CLIENT_ID
 # - CLIENT_SECRET
-# - RELEASE_TARGET_TOKEN
 # Azure DevOps Template: variables-common.yml
 # - ADMIN_USERNAME
 # - AZURE_RESOURCE_GROUP
@@ -27,6 +26,11 @@
 # - TemplateFileName
 # - TemplatePath
 # - TempResourceGroupName
+# Built-in variables:
+# - Agent.TempDirectory
+# - Build.BuildId
+# - Build.ArtifactStagingDirectory
+# - System.AccessToken
 
 parameters:
   - name: job_id
