@@ -16,11 +16,6 @@ param authenticationType string = 'sshPublicKey'
 @description('Username for the Virtual Machine. This is the username that will be used to login to the Virtual Machine.')
 param adminUsername string
 
-@minLength(10)
-@maxLength(64)
-@description('Passphrase used when generating the key pair.')
-param passPhrase string = substring(randomGuid, 0, 64)
-
 @description('Generate a new SSH key pair for the Virtual Machine. If set to false, the SSH Public Key will be retrieved from the SSH Key Resource.')
 param generateNewKey bool = true
 
@@ -32,11 +27,13 @@ param imageName string
 param agentCount int = 4
 
 // Varibles
-var vmssAgentSettings = loadYamlContent('../library/vmssAgentSettings.yaml')
+var passPhraseTmp = [for i in range(0, 5): uniqueString(randomGuid, '${i}')]
+var passPhrase = join(passPhraseTmp, '')
 var prefix = vmssAgentSettings.prefix
 var resSuffix = vmssAgentSettings.resSuffix
-var vmssName = vmssAgentSettings.vmssSuffix
 var uniqueSuffix = substring(uniqueString(location, resourceGroup().id), 0, 5)
+var vmssName = vmssAgentSettings.vmssSuffix
+var vmssAgentSettings = loadYamlContent('../library/vmssAgentSettings.yaml')
 
 // Common Resource Names
 var keyVaultName = format('{0}-{1}-kv-{2}', prefix, region, uniqueSuffix)
