@@ -3,7 +3,7 @@ variables:
   value: "adminuser"
 
 - name: AZURE_RESOURCE_GROUP
-  value: D3VC-AUE-RG-IMAGES
+  value: D3VC-AUE-RG-DEVOPS-AGENTS
 
 - name: LOCATION
   value: australiaeast

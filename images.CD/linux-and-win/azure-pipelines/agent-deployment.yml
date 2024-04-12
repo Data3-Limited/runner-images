@@ -41,7 +41,6 @@ jobs:
         --resource-group ${{ variables.AZURE_RESOURCE_GROUP }} `
         --name deploy-agents-${{ variables.LOCATION }} `
         --template-file 'source/azuredeploy.bicep' `
-        --location '${{ variables.LOCATION }}' `
         --parameters adminUsername=${{ variables.ADMIN_USERNAME }} `
         --parameters generateNewKey=true `
         --parameters imageName=${{ parameters.managed_image_name }}
