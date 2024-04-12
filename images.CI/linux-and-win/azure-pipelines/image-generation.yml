@@ -9,6 +9,7 @@
 # - CLIENT_SECRET
 # Azure DevOps Template: variables-common.yml
 # - ADMIN_USERNAME
+# - AZURE_LOCATION
 # - AZURE_RESOURCE_GROUP
 # - AZURE_SUBSCRIPTION
 # - AZURE_TENANT
