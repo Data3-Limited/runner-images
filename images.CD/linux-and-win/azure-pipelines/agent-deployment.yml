@@ -14,10 +14,6 @@ parameters:
 - name: managed_image_name
   type: string
 
-variables:
-- group: 'Image Generation Secrets'
-- template: variables-common.yml
-
 jobs:
 - job: ${{ parameters.job_id }}
   displayName: Image Generation (${{ parameters.image_type }})
@@ -25,7 +21,8 @@ jobs:
   cancelTimeoutInMinutes: 30
   pool: ${{ parameters.agent_pool }}
   variables:
-  - template: variables-${{ parameters.image_type }}.yml
+  - group: 'Image Generation Secrets'
+  - template: variables-common.yml
 
   steps:
   - checkout: self
