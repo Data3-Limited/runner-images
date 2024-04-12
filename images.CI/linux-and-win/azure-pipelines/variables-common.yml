@@ -1,0 +1,30 @@
+variables:
+- name: ADMIN_USERNAME
+  value: "adminuser"
+
+- name: AZURE_RESOURCE_GROUP
+  value: D3VC-AUE-RG-IMAGES
+
+- name: AZURE_SUBSCRIPTION
+  value: e0c2443f-7e62-464b-bd5f-ce2b3bb81c17
+
+- name: AZURE_TENANT
+  value: b0fcafb5-5948-4c94-ba5d-d171557663a2
+
+- name: BUILD_AGENT_SUBNET_NAME
+  value: images
+
+- name: BUILD_AGENT_VNET_NAME
+  value: d3vc-aue-vnet-001
+
+- name: BUILD_AGENT_VNET_RESOURCE_GROUP
+  value: D3VC-AUE-RG-IMAGES
+
+- name: RELEASE_TARGET_DEFINITION_ID
+  value: "468"
+
+- name: RELEASE_TARGET_ORGANIZATION
+  value: data3-ps
+
+- name: RELEASE_TARGET_PROJECT
+  value: TECH-Library

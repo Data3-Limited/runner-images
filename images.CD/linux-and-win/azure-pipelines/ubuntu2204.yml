@@ -1,6 +1,11 @@
+parameters:
+- name: managed_image_name
+  type: string
+
 trigger: none
 
 jobs:
 - template: agent-deployment.yml
   parameters:
     image_type: ubuntu2204
+    managed_image_name: ${{ parameters.managed_image_name }}

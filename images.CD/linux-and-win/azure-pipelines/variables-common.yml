@@ -1,0 +1,12 @@
+variables:
+- name: ADMIN_USERNAME
+  value: "adminuser"
+
+- name: AZURE_RESOURCE_GROUP
+  value: D3VC-AUE-RG-IMAGES
+
+- name: LOCATION
+  value: australiaeast
+
+- name: SERVICE_CONNECTION
+  value: D3-Dev
