@@ -93,6 +93,7 @@ to accomplish this.
 - Git-ftp 1.6.0
 - Haveged 1.9.14
 - Heroku 8.11.1
+- Heroku 8.11.1
 - jq 1.6
 - Kind 0.22.0
 - Kubectl 1.29.3
@@ -109,6 +110,7 @@ to accomplish this.
 - Parcel 2.12.0
 - Podman 3.4.4
 - Pulumi 3.112.0
+- Pulumi 3.112.0
 - R 4.3.3
 - Skopeo 1.4.1
 - Sphinx Open Source Search Server 2.2.11
@@ -116,6 +118,7 @@ to accomplish this.
 - Terraform 1.7.5
 - yamllint 1.35.1
 - yq 4.43.1
+- zstd 1.5.6
 - zstd 1.5.6
 
 ### CLI Tools
@@ -139,6 +142,9 @@ to accomplish this.
 - Vercel CLI 33.7.0
 =======
 - GitHub CLI 2.46.0
+- Google Cloud CLI 470.0.0
+- Netlify CLI 17.21.1
+- OpenShift CLI 4.15.5
 - Google Cloud CLI 470.0.0
 - Netlify CLI 17.21.1
 - OpenShift CLI 4.15.5
@@ -172,6 +178,9 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Cargo 1.77.1
 - Rust 1.77.1
 - Rustdoc 1.77.1
+- Cargo 1.77.1
+- Rust 1.77.1
+- Rustdoc 1.77.1
 - Rustup 1.27.0
 
 #### Packages
@@ -198,6 +207,9 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Microsoft Edge 123.0.2420.65
 - Microsoft Edge WebDriver 123.0.2420.65
 - Selenium server 4.19.0
+- Microsoft Edge 123.0.2420.65
+- Microsoft Edge WebDriver 123.0.2420.65
+- Selenium server 4.19.0
 - Mozilla Firefox 124.0.1
 >>>>>>> 54920b5b (pool)
 - Geckodriver 0.34.0
@@ -211,6 +223,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 | SELENIUM_JAR_PATH | /usr/share/java/selenium-server.jar   |
 
 ### .NET Tools
+- .NET Core SDK: 6.0.420, 7.0.407, 8.0.203
 - .NET Core SDK: 6.0.420, 7.0.407, 8.0.203
 - nbgv 3.6.133+2d32d93cb1
 
@@ -343,6 +356,8 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | bzip2                  | 1.0.8-5build1                       |
 | coreutils              | 8.32-4.1ubuntu1.2                   |
 | curl                   | 7.81.0-1ubuntu1.16                  |
+| coreutils              | 8.32-4.1ubuntu1.2                   |
+| curl                   | 7.81.0-1ubuntu1.16                  |
 | dbus                   | 1.12.20-2ubuntu4.1                  |
 | dnsutils               | 1:9.18.18-0ubuntu0.22.04.2          |
 | dpkg                   | 1.21.1ubuntu2.3                     |
@@ -365,6 +380,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | libc++-dev             | 1:14.0-55\~exp2                     |
 | libc++abi-dev          | 1:14.0-55\~exp2                     |
 | libc6-dev              | 2.35-0ubuntu3.6                     |
+| libcurl4               | 7.81.0-1ubuntu1.16                  |
 | libcurl4               | 7.81.0-1ubuntu1.16                  |
 | libgbm-dev             | 23.2.1-1ubuntu3.1\~22.04.2          |
 | libgconf-2-4           | 3.2.6-7ubuntu2                      |
