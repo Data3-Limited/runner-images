@@ -21,7 +21,7 @@ $Body = @{
     }
 } | ConvertTo-Json -Depth 3
 
-$URL = "https://dev.azure.com/$Organization/$Project/_apis/pipelines/$DefinitionId/runs&api-version=7.1-preview.1"
+$URL = "https://dev.azure.com/{0}/{1}/_apis/pipelines/{2}/runs?api-version=7.1-preview.1" -f $Organization, $Project, $DefinitionId
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("'':${AccessToken}"))
 $headers = @{
     Authorization = "Basic ${base64AuthInfo}"
