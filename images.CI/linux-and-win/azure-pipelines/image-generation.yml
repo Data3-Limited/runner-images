@@ -195,7 +195,7 @@ jobs:
                    -Project $(RELEASE_TARGET_PROJECT) `
                    -ImageType "${{ parameters.image_type }}" `
                    -ManagedImageName "$(ManagedImageName)" `
-                   -AccessToken $(RELEASE_TARGET_TOKEN)
+                   -AccessToken $env:RELEASE_TARGET_TOKEN
       env:
         RELEASE_TARGET_TOKEN: $(System.AccessToken)
 
