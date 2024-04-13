@@ -1,17 +1,13 @@
 schedules:
-- cron: "0 0 * * *"
-  displayName: Daily
+- cron: "00 12 * * Sun"
+  displayName: Sunday 22:00 (UTC + 10) Australia Eastern
   branches:
     include:
     - main
   always: true
 
 trigger: none
-pr:
-  autoCancel: true
-  branches:
-    include:
-    - main
+pr: none
 
 jobs:
 - template: image-generation.yml

@@ -43,4 +43,5 @@ jobs:
         --template-file 'source/azuredeploy.bicep' `
         --parameters adminUsername=${{ variables.ADMIN_USERNAME }} `
         --parameters generateNewKey=true `
-        --parameters imageName=${{ parameters.managed_image_name }}
+        --parameters imageName=${{ parameters.managed_image_name }} `
+        --parameters imageType=${{ parameters.image_type }}

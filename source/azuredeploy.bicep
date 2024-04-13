@@ -20,31 +20,33 @@ param adminUsername string
 param generateNewKey bool = true
 
 // DevOps Agent Image
+@description('Number of agent vms to create in scale set.')
+param agentCount int = 4
+
 @description('Name of the image to use for the Virtual Machine. Name comes from image generation pipeline.')
 param imageName string
 
-@description('Number of agent vms to create in scale set.')
-param agentCount int = 4
+@description('Name of the image to use for the Virtual Machine. Name comes from image generation pipeline.')
+param imageType string
 
 // Varibles
 var passPhraseTmp = [for i in range(0, 5): uniqueString(randomGuid, '${i}')]
 var passPhrase = join(passPhraseTmp, '')
-var prefix = vmssAgentSettings.prefix
-var resSuffix = vmssAgentSettings.resSuffix
+var prefix = 'd3vc'
+var resSuffix = 'devops-agents'
 var uniqueSuffix = substring(uniqueString(location, resourceGroup().id), 0, 5)
-var vmssName = vmssAgentSettings.vmssSuffix
-var vmssAgentSettings = loadYamlContent('../library/vmssAgentSettings.yaml')
 
 // Common Resource Names
+var imageResourceGroupName = format('{0}-{1}-RG-IMAGES', toUpper(prefix), toUpper(region))
 var keyVaultName = format('{0}-{1}-kv-{2}', prefix, region, uniqueSuffix)
 var managedIdentityName = format('{0}-{1}-mi-{2}', prefix, region, resSuffix)
 var networkSecurityGroupName = format('{0}-{1}-ns-{2}', prefix, region, resSuffix)
 var virtualNetworkName = format('{0}-{1}-vn-{2}', prefix, region, resSuffix)
 
 // VMSS Resource Names
-var networkInterfaceName = format('{0}-{1}-ni-{2}', prefix, region, vmssName)
-var publicIpAddressName = format('{0}-{1}-pi-{2}', prefix, region, vmssName)
-var vmScaleSetName = format('{0}-{1}-vs-{2}', prefix, region, vmssName)
+var networkInterfaceName = format('{0}-{1}-ni-{2}', prefix, region, imageType)
+var publicIpAddressName = format('{0}-{1}-pi-{2}', prefix, region, imageType)
+var vmScaleSetName = format('{0}-{1}-vs-{2}', prefix, region, imageType)
 
 // Authentication Configuration
 var linuxConfiguration = {
@@ -62,7 +64,7 @@ var linuxConfiguration = {
 // Get Resources
 resource rImage 'Microsoft.Compute/images@2023-09-01' existing = {
   name: imageName
-  scope: resourceGroup(vmssAgentSettings.imageResourceGroupName)
+  scope: resourceGroup(imageResourceGroupName)
 }
 
 // Resources

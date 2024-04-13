@@ -1,5 +1,0 @@
-prefix: d3vc
-vmssSuffix: ubuntu2204
-resSuffix: devops-agents
-
-imageResourceGroupName: D3VC-AUE-RG-IMAGES
