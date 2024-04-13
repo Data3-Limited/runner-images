@@ -3,6 +3,7 @@ parameters:
   type: string
 
 trigger: none
+pr: none
 
 jobs:
 - template: agent-deployment.yml
